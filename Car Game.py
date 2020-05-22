@@ -14,7 +14,7 @@ class Carro:
     def ligar(self):
         self.ligado=True
 
-     def desligar(self):
+    def desligar(self):
         self.ligado=False
 
     def info(self):
@@ -90,3 +90,23 @@ def Listar():
         print(f"{p} - {c.nome}")
         p=p+1
     os.system("pause")
+
+ret=Menu()
+while ret < "7":
+    if ret == "1":
+        newCar()
+    elif ret =="2":
+        informacoes()
+    elif ret =="3":
+        deleteCar()
+    elif ret =="4":
+        LigarCarro()
+    elif ret =="5":
+        DesligarCarro()
+    elif ret =="6":
+        Listar()
+    ret=Menu()
+
+os.system("cls") or None
+print("End")
+
