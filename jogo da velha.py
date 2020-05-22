@@ -56,6 +56,64 @@ def cpuJoga():
         jogadas+=1
         quemJoga=2
 
+def verificarVitoria():
+    global velha
+    vitoria="n"
+    simbolos=["X","O"]
+    for s in simbolos:
+        vitoria="n"
+        il=ic=0
+        while il<3:
+            som=0
+            ic=0
+            while ic<3:
+                if velha[il][ic]==s:
+                    soma+=1
+                ic+=1
+            il+=1
+            if soma == 3:
+                vitoria=s
+                break
+        if vitoria != "n":
+            break
+        il=ic=0
+        while ic<3:
+            som=0
+            il=0
+            while il<3:
+                if velha[il][ic]==s:
+                    soma+=1      
+                il+=1          
+            if soma == 3:
+                vitoria=s
+                break
+            ic+=1
+        if vitoria != "n":
+            break
+        soma=0
+        idiag=0
+        while idiag<3:
+             if velha[idiag][idiag]==s:
+                 soma+=1
+             idiag+=1
+        if soma == 3:
+                vitoria=s
+                break
+        soma=0
+        idiagl=0
+        idiagc=2
+        while idiagc<3:
+             if velha[idiagl][idiagc]==s:
+                 soma+=1
+             idiagl+=1
+             idiagc-=1
+        if soma == 3:
+                vitoria=s
+                break
+    return vitoria
+        
+
+
 while True:
     tela()
     jogadorJoga()
